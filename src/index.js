@@ -1,6 +1,7 @@
 import LanguageSwitcher from "./js/LanguageSwitcher";
 import ViewStoryButton from "./js/ViewStoryButton";
 import Story from "./js/Story";
+import "./css/styles.scss";
 
 "use strict";
 

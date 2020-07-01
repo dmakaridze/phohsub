@@ -86,6 +86,7 @@ module.exports = {
         new CopyPlugin([
             {from: 'src/svg', to: 'svg'},
             {from: 'src/img', to: 'img'},
+            {from: 'src/audio', to: 'audio'},
         ]),
         new HtmlWebpackPlugin({
             hash: false,
