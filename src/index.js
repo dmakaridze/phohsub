@@ -1,9 +1,27 @@
-import './css/styles.scss';
+import LanguageSwitcher from "./js/LanguageSwitcher";
+import ViewStoryButton from "./js/ViewStoryButton";
+import Story from "./js/Story";
 
-function component() {
-    const element = document.createElement('div');
-    element.innerText = "Cactus";
-    return element;
-}
+"use strict";
 
-document.body.appendChild(component());
+document.onreadystatechange = () => {
+    if (document.readyState === "interactive") {
+        const story = new Story('story', 'ka');
+        document.body.appendChild(story.el);
+        const langSwitcher = new LanguageSwitcher({
+            languages: {
+                ka: "ENG",
+                en: "ქარ"
+            }
+        });
+        document.body.appendChild(langSwitcher.el);
+        langSwitcher.setActive("ka");
+        langSwitcher.append(story);
+        const viewStoryBtn = new ViewStoryButton();
+        document.body.appendChild(viewStoryBtn.el);
+        viewStoryBtn.addStory(story);
+        window.story = story;
+        story.resize().init();
+        window.onresize = () => story.resize();
+    }
+};
