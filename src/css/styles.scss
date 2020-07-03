@@ -3,3 +3,16 @@ html, body, div, p, h1, h2, span {
   margin: 0;
   box-sizing: border-box;
 }
+
+.swiper-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.swiper-slide {
+  svg {
+    background-color: white;
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+}

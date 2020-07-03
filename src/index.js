@@ -8,6 +8,7 @@ import "./css/styles.scss";
 document.onreadystatechange = () => {
     if (document.readyState === "interactive") {
         const story = new Story('story', 'ka');
+        if (!story.created) return;
         document.body.appendChild(story.el);
         const langSwitcher = new LanguageSwitcher({
             languages: {
