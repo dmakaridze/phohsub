@@ -1,0 +1,26 @@
+.view-story-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #000000f0;
+  .view-story-btn-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    .view-story-btn {
+      cursor: pointer;
+      border: none;
+      padding: 0.7rem 1.2rem 0.6rem;
+      color: black;
+      background-color: #999;
+      &:hover {
+        background-color: white;
+      }
+    }
+  }
+}

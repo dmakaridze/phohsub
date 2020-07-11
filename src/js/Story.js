@@ -2,6 +2,7 @@ import "swiper/css/swiper.css"
 import Swiper from "swiper";
 import StoryData from "../json/story.json";
 import Slide from "./Slide";
+import APlayer from "../modules/APlayer/APlayer";
 
 /**
  * @class Story
@@ -33,7 +34,7 @@ class Story {
 
         this.slides = [];
 
-        for (let i =0; i<StoryData.slides.length; i++){
+        for (let i = 0; i < StoryData.slides.length; i++) {
             let slide = new Slide(StoryData.slides[i], this);
             swWrapper.append(slide.el);
             this.slides[i] = slide;
@@ -42,52 +43,70 @@ class Story {
         let swPagination = document.createElement("div");
         swPagination.classList.add("swiper-pagination");
         swContainer.append(swPagination);
+
+        this.audio = new APlayer();
+        document.body.appendChild(this.audio.el);
+        window.playerHeight = this.audio.el.clientHeight;
     }
 
+    /**
+     *
+     * @returns {Story}
+     */
     init() {
-        this.sw = new Swiper('.swiper-container', {
+        let story = this;
+        this.sw = new Swiper(".swiper-container", {
             effect: "fade",
             mousewheel: true,
+            direction: "vertical",
             pagination: {
-                el: '.swiper-pagination',
+                el: ".swiper-pagination",
+                //type: "custom",
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (index + 1) + '</span>';
+                },
             },
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            keyboard: {
+                enabled: true,
+                onlyInViewport: false,
             },
             scrollbar: {
-                el: '.swiper-scrollbar',
+                el: ".swiper-scrollbar",
             },
             on: {
                 transitionStart: function () {
-                    console.log("transitionStart");
+                    story.audio.pause();
                 },
                 transitionEnd: function () {
-                    console.log("transitionEnd");
+                    story.slides[this.activeIndex].play();
                 }
             }
-        })
+        });
         return this;
     }
 
+    /**
+     *
+     * @returns {Story}
+     */
     resize() {
+        for (let i = 0; i < this.slides.length; i++) {
+            this.slides[i].resize();
+        }
         return this;
+    }
+
+    /**
+     *
+     */
+    start(){
+        story.slides[0].play();
     }
 }
 
 export default Story;
-
-/*
-
-
-
-
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
-
-
- */

@@ -1,3 +1,5 @@
+import "./LanguageSwitcher.scss";
+
 class LanguageSwitcher {
     constructor (options){
         if (typeof options["languages"] !== "undefined"){

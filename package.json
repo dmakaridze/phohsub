@@ -37,10 +37,13 @@
   },
   "dependencies": {
     "babel-loader": "^7.1.5",
+    "bpg-glaho-web-caps": "^1.0.0",
+    "bpg-rioni-vera": "^1.0.0",
     "fullpage.js": "^3.0.8",
     "gsap": "^3.3.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "mustache": "^4.0.1",
+    "plyr": "^3.6.2",
     "style-ext-html-webpack-plugin": "^4.1.2",
     "swiper": "^5.4.5"
   }

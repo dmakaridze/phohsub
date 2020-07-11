@@ -1,0 +1,14 @@
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  background-color: black;
+  .brand {
+    height: 100%;
+    cursor: pointer;
+  }
+}
