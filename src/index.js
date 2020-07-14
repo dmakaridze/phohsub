@@ -6,6 +6,7 @@ import Header from "./modules/Header/Header";
 
 import "./css/styles.scss";
 import ScrollIcon from "./modules/ScrollIcon/ScrollIcon";
+import InfoModal from "./js/InfoModal";
 
 "use strict";
 
@@ -14,9 +15,12 @@ window.playerHeight = 52;
 
 document.onreadystatechange = () => {
     if (document.readyState === "interactive") {
+        let wrapper = document.getElementById("wrapper");
         const story = new Story('story', 'ka');
+        window.story = story;
         if (!story.created) return;
-        document.body.appendChild(story.el);
+        wrapper.appendChild(story.el);
+        wrapper.appendChild(story.audio.el);
         const langSwitcher = new LanguageSwitcher({
             languages: {
                 ka: "ENG",
@@ -29,17 +33,18 @@ document.onreadystatechange = () => {
             langSwitcher: langSwitcher.el
         });
         header.el.style.height = window.headerHeight + "px";
-        document.body.appendChild(header.el);
+        wrapper.appendChild(header.el);
         const viewStoryBtn = new ViewStoryButton();
-        document.body.appendChild(viewStoryBtn.el);
-        viewStoryBtn.addStory(story);
-        window.story = story;
-        story.init();
-        window.onresize = () => story.resize();
-        const scrollIcon = new ScrollIcon();
-        document.body.appendChild(scrollIcon.el);
-        viewStoryBtn.el.addEventListener("click", ()=>{
-            scrollIcon.el.style.display = "flex";
+        wrapper.appendChild(viewStoryBtn.el);
+        window.scrollIcon = new ScrollIcon();
+        wrapper.appendChild(scrollIcon.el);
+        document.body.addEventListener("storyLoad", ()=>{
+            viewStoryBtn.addStory(story);
+            story.init();
+            viewStoryBtn.el.addEventListener("click", ()=>{
+                scrollIcon.el.style.display = "flex";
+            });
+            const infoModal = new InfoModal();
         });
     }
 };

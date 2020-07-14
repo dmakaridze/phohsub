@@ -34,6 +34,16 @@ class Story {
 
         this.slides = [];
 
+
+        this.storyLoad = new Event("storyLoad");
+        this.slidesLeft = StoryData.slides.length;
+        this.slideLoad = new Event("slideLoad");
+        document.body.addEventListener("slideLoad", ()=>{
+            this.slidesLeft--;
+            if (this.slidesLeft === 0){
+                document.body.dispatchEvent(this.storyLoad);
+            }
+        });
         for (let i = 0; i < StoryData.slides.length; i++) {
             let slide = new Slide(StoryData.slides[i], this);
             swWrapper.append(slide.el);
@@ -45,8 +55,8 @@ class Story {
         swContainer.append(swPagination);
 
         this.audio = new APlayer();
-        document.body.appendChild(this.audio.el);
         window.playerHeight = this.audio.el.clientHeight;
+
     }
 
     /**
@@ -84,9 +94,15 @@ class Story {
                 },
                 transitionEnd: function () {
                     story.slides[this.activeIndex].play();
+                    if (this.isEnd) {
+                        scrollIcon.el.style.display = "none";
+                    } else {
+                        scrollIcon.el.style.display = "flex";
+                    }
                 }
             }
         });
+        window.onresize = () => this.resize();
         return this;
     }
 

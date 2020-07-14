@@ -95,6 +95,7 @@ module.exports = {
             {from: 'src/svg', to: 'svg'},
             {from: 'src/img', to: 'img'},
             {from: 'src/audio', to: 'audio'},
+            {from: 'src/html', to: 'html'},
         ]),
         new HtmlWebpackPlugin({
             hash: false,

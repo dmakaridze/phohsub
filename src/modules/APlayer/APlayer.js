@@ -33,6 +33,7 @@ class APlayer {
                 },
             ],
         };
+        return this;
     }
 
     /**
@@ -40,6 +41,7 @@ class APlayer {
      */
     play() {
         this.audio.play();
+        return this;
     }
 
     /**
@@ -49,6 +51,7 @@ class APlayer {
         if (this.audio.playing){
             this.audio.pause();
         }
+        return this;
     }
 
     /**
@@ -56,6 +59,7 @@ class APlayer {
      */
     mute() {
         this.audio.muted = true;
+        return this;
     }
 
     /**
@@ -63,6 +67,17 @@ class APlayer {
      */
     unmute() {
         this.audio.muted = false;
+        return this;
+    }
+
+    show(){
+        this.el.style.display = "block";
+        return this;
+    }
+
+    hide(){
+        this.el.style.display = "none";
+        return this;
     }
 }
 

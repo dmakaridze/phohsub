@@ -1,88 +1,53 @@
 {
   "slides": [
     {
-      "id": 1,
-      "img": "1.svg",
-      "audio": "audio/giorgik_mix.mp3",
-      "caption": "",
-      "type": "audio"
-    },
-    {
-      "id": 2,
-      "img": "2.svg",
-      "audio": "audio/irma_mix.mp3",
-      "caption": "",
-      "type": "audio"
-    },
-    {
-      "id": 3,
-      "img": "3.svg",
-      "audio": "audio/misha_mix.mp3",
-      "caption": "",
-      "type": "audio"
-    },
-    {
-      "id": 4,
-      "img": "4.svg",
+      "id": "",
+      "src": "svg/1.svg",
       "audio": "audio/russo_mix.mp3",
       "caption": "",
-      "type": "audio"
+      "type": "svg"
     },
     {
-      "id": 5,
-      "img": "5.svg",
+      "id": "",
+      "src": "svg/5.svg",
       "audio": "audio/sopho_mix.mp3",
       "caption": "",
-      "type": "audio"
+      "type": "svg"
     },
     {
-      "id": 6,
-      "img": "6.svg",
-      "audio": "audio/taki_mixd.mp3",
-      "caption": "",
-      "type": "audio"
-    },
-    {
-      "id": 7,
-      "img": "7.svg",
+      "id": "",
+      "src": "svg/8.svg",
       "audio": "audio/zuriuss_mix.mp3",
       "caption": "",
-      "type": "audio"
+      "type": "svg"
     },
     {
-      "id": 8,
-      "img": "8.svg",
-      "audio": "audio/giorgik_mix.mp3",
+      "id": "",
+      "src": "svg/4.svg",
+      "audio": "audio/taki_mixd.mp3",
       "caption": "",
-      "type": "audio"
+      "type": "svg"
     },
     {
-      "id": 9,
-      "img": "9.svg",
-      "audio": "audio/irma_mix.mp3",
-      "caption": "",
-      "type": "audio"
-    },
-    {
-      "id": 10,
-      "img": "10.svg",
+      "id": "",
+      "src": "svg/10.svg",
       "audio": "audio/misha_mix.mp3",
       "caption": "",
-      "type": "audio"
+      "type": "svg"
     },
     {
-      "id": 11,
-      "img": "11.svg",
-      "audio": "audio/russo_mix.mp3",
+      "id": "",
+      "src": "svg/2.svg",
+      "audio": "",
       "caption": "",
-      "type": "audio"
+      "type": "svg"
     },
     {
-      "id": 12,
-      "img": "12.svg",
-      "audio": "audio/sopho_mix.mp3",
+      "id": "",
+      "src": "html/info.html",
+      "audio": "",
       "caption": "",
-      "type": "audio"
+      "type": "html"
     }
   ]
 }
