@@ -4,6 +4,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const MinifyPlugin = require("babel-minify-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
     mode: 'development',
@@ -111,5 +112,9 @@ module.exports = {
         }),
 //        new MinifyPlugin(),
         new MiniCssExtractPlugin(),
+        new FaviconsWebpackPlugin({
+            logo: "./src/img/favicon.png",
+            mode: 'webapp',
+        }),
     ]
 };

@@ -5,49 +5,63 @@
       "src": "svg/1.svg",
       "audio": "audio/russo_mix.mp3",
       "caption": "",
-      "type": "svg"
+      "type": "svg",
+      "vAlign": "center",
+      "hAlign": "center"
     },
     {
       "id": "",
       "src": "svg/5.svg",
       "audio": "audio/sopho_mix.mp3",
       "caption": "",
-      "type": "svg"
+      "type": "svg",
+      "vAlign": "bottom",
+      "hAlign": "center"
     },
     {
       "id": "",
       "src": "svg/8.svg",
       "audio": "audio/zuriuss_mix.mp3",
       "caption": "",
-      "type": "svg"
+      "type": "svg",
+      "vAlign": "bottom",
+      "hAlign": "center"
     },
     {
       "id": "",
       "src": "svg/4.svg",
       "audio": "audio/taki_mixd.mp3",
       "caption": "",
-      "type": "svg"
+      "type": "svg",
+      "vAlign": "top",
+      "hAlign": "center"
     },
     {
       "id": "",
       "src": "svg/10.svg",
       "audio": "audio/misha_mix.mp3",
       "caption": "",
-      "type": "svg"
+      "type": "svg",
+      "vAlign": "center",
+      "hAlign": "center"
     },
     {
       "id": "",
       "src": "svg/2.svg",
-      "audio": "",
+      "audio": "audio/eka_mix.mp3",
       "caption": "",
-      "type": "svg"
+      "type": "svg",
+      "vAlign": "center",
+      "hAlign": "center"
     },
     {
       "id": "",
       "src": "html/info.html",
       "audio": "",
       "caption": "",
-      "type": "html"
+      "type": "html",
+      "vAlign": "",
+      "hAlign": ""
     }
   ]
 }
