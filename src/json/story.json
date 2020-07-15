@@ -2,6 +2,15 @@
   "slides": [
     {
       "id": "",
+      "src": "html/intro.html",
+      "audio": "",
+      "caption": "",
+      "type": "html",
+      "vAlign": "",
+      "hAlign": ""
+    },
+    {
+      "id": "",
       "src": "svg/1.svg",
       "audio": "audio/russo_mix.mp3",
       "caption": "",

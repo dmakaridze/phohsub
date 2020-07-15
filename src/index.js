@@ -3,7 +3,7 @@ import LanguageSwitcher from "./modules/LanguageSwitcher/LanguageSwitcher";
 import ViewStoryButton from "./modules/ViewStoryButton/ViewStoryButton";
 import Story from "./js/Story";
 import Header from "./modules/Header/Header";
-
+import "mg-glaho-drunk";
 import "./css/styles.scss";
 import ScrollIcon from "./modules/ScrollIcon/ScrollIcon";
 import InfoModal from "./js/InfoModal";

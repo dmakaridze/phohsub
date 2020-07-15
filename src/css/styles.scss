@@ -86,6 +86,7 @@ header,
 
 .container {
   display: flex;
+  justify-content: center;
 }
 
 .full-page {
@@ -159,7 +160,7 @@ header,
     padding: 8rem;
 
     p, li {
-      font-family: "BPG Rioni Vera", sans-serif;
+      font-family: "MG Glaho Drunk", sans-serif;
       font-size: 1.5rem;
       line-height: 2rem;
       margin-bottom: 1rem;
@@ -199,4 +200,58 @@ a {
       color: white;
     }
   }
+}
+
+.info-bg,
+.intro-bg {
+  h3 {
+    color: #333;
+  }
+
+  color: #444;
+
+  a {
+    color: #222;
+
+    &:hover {
+      color: $brand-green;
+    }
+  }
+}
+
+.info-bg,
+.intro-bg {
+  background-size: cover;
+  background-position: center;
+}
+
+.info-bg {
+  background-image: url(../img/watercolour-grey.jpg);
+}
+.intro-bg {
+  background-image: url(../img/hole.jpg);
+}
+
+.info-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10%;
+}
+
+h1 {
+  font-family: "BPG Glaho WEB Caps", sans-serif;
+  font-size: 2.5rem;
+  font-weight: normal;
+  color: $brand-green;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-family: "MG Glaho Drunk", sans-serif;
+  font-size: 1.5rem;
+  font-weight: normal;
+  line-height: 2.5rem;
 }
