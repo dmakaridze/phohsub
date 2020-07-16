@@ -22,6 +22,7 @@ $brand-green: #016838;
 
 :root {
   --plyr-color-main: $brand-green;
+  --plyr-audio-controls-background: "none";
   --swiper-pagination-color: $brand-green;
 }
 
@@ -254,4 +255,93 @@ h4 {
   font-size: 1.5rem;
   font-weight: normal;
   line-height: 2.5rem;
+}
+
+.voice-coder {
+  position: absolute;
+  bottom: 0;
+  height: 65%;
+  display: grid;
+  grid-template-columns: repeat(100, 5px);
+  grid-template-rows: 100%;
+  grid-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  span {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(#201c26 5%, red, yellow, #ff4800, yellow, red, #201c26 85%);
+    animation: bounce-001;
+    animation-duration: 0s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-duration: 900ms;
+    @for $b from 1 through 100 {
+      &:nth-child(#{$b}) {
+        animation-delay: #{(($b) * (75))}ms;
+      }
+    }
+    // change up the animations
+    &:nth-child(2n) {
+      animation-name: bounce-002;
+      animation-timing-function: ease-out;
+    }
+    &:nth-child(3n) {
+      animation-name: bounce-003;
+      animation-timing-function: linear;
+    }
+  }
+  &:after {
+    position: absolute;
+    z-index: 3;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.25;
+    background-image: url("../img/overlay.png");
+    background-repeat: repeat-x;
+    background-size: 50%;
+  }
+}
+
+@keyframes bounce-001 {
+  0% {
+    height: 100%;
+  }
+  50% {
+    height: 50%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@keyframes bounce-002 {
+  0% {
+    height: 100%;
+  }
+  80% {
+    height: 30%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@keyframes bounce-003 {
+  0% {
+    height: 80%;
+  }
+  30% {
+    height: 20%;
+  }
+  100% {
+    height: 80%;
+  }
 }

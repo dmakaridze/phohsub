@@ -3,6 +3,7 @@ import Swiper from "swiper";
 import StoryData from "../json/story.json";
 import Slide from "./Slide";
 import APlayer from "../modules/APlayer/APlayer";
+import SvgAnimations from "./SvgAnimations";
 
 /**
  * @class Story
@@ -91,6 +92,7 @@ class Story {
             on: {
                 transitionStart: function () {
                     story.audio.pause();
+                    story.slides[this.previousIndex].stop();
                 },
                 transitionEnd: function () {
                     story.slides[this.activeIndex].play();
@@ -103,6 +105,10 @@ class Story {
             }
         });
         window.onresize = () => this.resize();
+        this.svgAnimations = new SvgAnimations();
+        for (let i=0; i<this.slides.length; i++){
+            this.slides[i].animate = this.svgAnimations.get(this.slides[i].svgId);
+        }
         return this;
     }
 

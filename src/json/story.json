@@ -3,11 +3,29 @@
     {
       "id": "",
       "src": "html/intro.html",
-      "audio": "",
+      "audio": "audio/ambient.mp3",
       "caption": "",
       "type": "html",
       "vAlign": "",
       "hAlign": ""
+    },
+    {
+      "id": "",
+      "src": "svg/7.svg",
+      "audio": "audio/giorgik_mix.mp3",
+      "caption": "",
+      "type": "svg",
+      "vAlign": "bottom",
+      "hAlign": "center"
+    },
+    {
+      "id": "",
+      "src": "svg/6.svg",
+      "audio": "audio/irma_mix.mp3",
+      "caption": "",
+      "type": "svg",
+      "vAlign": "top",
+      "hAlign": "center"
     },
     {
       "id": "",
@@ -66,7 +84,7 @@
     {
       "id": "",
       "src": "html/info.html",
-      "audio": "",
+      "audio": "audio/ambient.mp3",
       "caption": "",
       "type": "html",
       "vAlign": "",

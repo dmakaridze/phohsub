@@ -37,11 +37,12 @@
     "webpack-manifest-plugin": "^2.2.0"
   },
   "dependencies": {
+    "animejs": "^3.2.0",
     "babel-loader": "^7.1.5",
     "bpg-glaho-web-caps": "^1.0.0",
     "bpg-rioni-vera": "^1.0.0",
     "fullpage.js": "^3.0.8",
-    "gsap": "^3.3.4",
+    "gsap": "^3.4.0",
     "lodash": "^4.17.19",
     "mg-glaho-drunk": "^1.0.0",
     "mustache": "^4.0.1",

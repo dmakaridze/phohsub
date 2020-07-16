@@ -27,6 +27,8 @@ class Slide {
                     this.el.innerHTML = Mustache.render(template, {});
                     if (this.type === "svg"){
                         this.svg = this.el.children[0];
+                        this.svgId = this.svg.id;
+                        this.animate = null;
                     } else if (this.type === "html"){
 
                     }
@@ -79,6 +81,18 @@ class Slide {
             this.parent.audio.set(this.audio).show().play();
         } else {
             this.parent.audio.hide();
+        }
+        if (this.type === "svg" && this.animate){
+            this.animate.play();
+        }
+    }
+
+    /**
+     *
+     */
+    stop(){
+        if (this.type === "svg" && this.animate){
+            this.animate.pause();
         }
     }
 }
