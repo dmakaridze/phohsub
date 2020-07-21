@@ -106,3 +106,4 @@ dist
 .tern-port
 /src/audio/
 private.conf
+/design/
