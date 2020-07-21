@@ -29,6 +29,10 @@ class Slide {
                         this.svg = this.el.children[0];
                         this.svgId = this.svg.id;
                         this.animate = null;
+                        let svgName = document.createElement("div");
+                        svgName.classList.add("svg-name");
+                        svgName.innerHTML = this.src;
+                        this.el.append(svgName);
                     } else if (this.type === "html"){
 
                     }
