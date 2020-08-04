@@ -2,12 +2,13 @@ const path = require('path');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-//const MinifyPlugin = require("babel-minify-webpack-plugin");
+const MinifyPlugin = require("babel-minify-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: {
         index: './src/index.js',
     },
@@ -37,7 +38,7 @@ module.exports = {
                             sourceMap: true,
                         },
                     },
-                 /*   {
+                    {
                         loader: 'postcss-loader',
                         options: {
                             sourceMap: true,
@@ -46,8 +47,6 @@ module.exports = {
                             }
                         }
                     },
-
-                  */
                     {
                         loader: 'sass-loader',
                         options: {
@@ -82,12 +81,6 @@ module.exports = {
                     }
                 }
             }
-           /* {
-                test: require.resolve('snapsvg/dist/snap.svg.js'),
-                use: 'imports-loader?this=>window,fix=>module.exports=0',
-            }
-
-            */
         ],
     },
     plugins: [
@@ -110,11 +103,12 @@ module.exports = {
                 useShortDoctype: false
             }
         }),
-//        new MinifyPlugin(),
+        new MinifyPlugin(),
         new MiniCssExtractPlugin(),
         new FaviconsWebpackPlugin({
             logo: "./src/img/favicon.png",
             mode: 'webapp',
         }),
+        new CleanWebpackPlugin(),
     ]
 };

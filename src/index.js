@@ -29,7 +29,13 @@ document.onreadystatechange = () => {
         });
         langSwitcher.setActive("ka");
         langSwitcher.append(story);
+        let infoLink = document.createElement("a");
+        infoLink.href = "#10";
+        infoLink.classList.add("info-link");
+        infoLink.innerText = "ინფორმაცია ნარკოტიკებზე";
+
         let header = new Header("svg/cactus-green.svg", {
+            infoLink: infoLink,
             langSwitcher: langSwitcher.el
         });
         header.el.style.height = window.headerHeight + "px";

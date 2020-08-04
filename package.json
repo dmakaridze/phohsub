@@ -15,6 +15,7 @@
     "babel-core": "^6.26.3",
     "babel-minify-webpack-plugin": "^0.3.1",
     "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.5.3",
     "favicons-webpack-plugin": "^3.0.1",
@@ -41,12 +42,14 @@
     "babel-loader": "^7.1.5",
     "bpg-glaho-web-caps": "^1.0.0",
     "bpg-rioni-vera": "^1.0.0",
+    "ckeditor4": "^4.14.1",
     "fullpage.js": "^3.0.8",
     "gsap": "^3.4.1",
     "lodash": "^4.17.19",
     "mg-glaho-drunk": "^1.0.0",
     "mustache": "^4.0.1",
     "plyr": "^3.6.2",
+    "polymorph-js": "^1.0.2",
     "style-ext-html-webpack-plugin": "^4.1.2",
     "swiper": "^5.4.5"
   }

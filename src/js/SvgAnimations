@@ -1,35 +1,21 @@
-import SVG1 from "./animations/SVG1";
-import SVG5 from "./animations/SVG5";
-import SVG7 from "./animations/SVG7";
-import SVG8 from "./animations/SVG8";
-
-//import SVG3 from "./animations/SVG3";
+import {SVGClasses, SVGClassesLength} from "./SVGClasses";
+import "../modules/StringConvert/StringConvert";
+import {toCamelCase} from "../modules/StringConvert/StringConvert";
 
 class SvgAnimations {
     constructor() {
-        this.animations = {
-            svg1: new SVG1(),
-            svg5: new SVG5(),
-            svg7: new SVG7(),
-            svg8: new SVG8(),
-            //svg3: new SVG3(),
+        this.animations = {};
+        for (let i=0; i<SVGClassesLength; i++){
+            let key = "svg" + (i+1);
+            this.animations[key] = new SVGClasses(key.toUpperCase());
         }
     }
     get(id){
-        switch (id) {
-            case "svg-1":
-                return this.animations.svg1;
-            case "svg-5":
-                return this.animations.svg5;
-            case "svg-7":
-                return this.animations.svg7;
-            case "svg-8":
-                return this.animations.svg8;
-            //case "svg-3":
-            //    return this.animations.svg3;
-            default:
-                return null;
+        if (typeof id === "string"){
+            let svgId = toCamelCase(id);
+            return this.animations[svgId];
         }
+        return null;
     }
 }
 

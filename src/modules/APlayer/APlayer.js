@@ -15,7 +15,10 @@ class APlayer {
         this.audio = new Audio();
         this.el.appendChild(this.audio);
         this.audio.type = 'audio/mpeg';
-        this.audio = new Plyr(this.audio);
+        this.audio = new Plyr(this.audio, {
+            blankVideo: "audio/silence.mp3",
+            controls: ['play', 'progress', 'current-time', 'mute', 'volume'],
+        });
     }
 
     /**
@@ -78,6 +81,14 @@ class APlayer {
     hide(){
         this.el.style.display = "none";
         return this;
+    }
+
+    showProgress(){
+        this.el.classList.remove("hide-progress");
+    }
+
+    hideProgress(){
+        this.el.classList.add("hide-progress");
     }
 }
 

@@ -8,8 +8,9 @@ class Slide {
      *
      * @param data
      * @param parent
+     * @param index
      */
-    constructor(data, parent) {
+    constructor(data, parent, index) {
         this.parent = parent;
         this.id = data.id;
         this.src = data.src;
@@ -20,20 +21,18 @@ class Slide {
         this.hAlign = data.hAlign;
         this.el = document.createElement("div");
         this.el.classList.add("swiper-slide");
-        if (this.type === "svg" || this.type === "html"){
+        this.el.setAttribute("data-hash", index + 1);
+        this.el.setAttribute("data-history", index + 1);
+        if (this.type === "svg" || this.type === "html") {
             fetch(this.src)
                 .then((response) => response.text())
                 .then((template) => {
                     this.el.innerHTML = Mustache.render(template, {});
-                    if (this.type === "svg"){
+                    if (this.type === "svg") {
                         this.svg = this.el.children[0];
                         this.svgId = this.svg.id;
                         this.animate = null;
-                        let svgName = document.createElement("div");
-                        svgName.classList.add("svg-name");
-                        svgName.innerHTML = this.src;
-                        this.el.append(svgName);
-                    } else if (this.type === "html"){
+                    } else if (this.type === "html") {
 
                     }
                     this.resize();
@@ -46,7 +45,7 @@ class Slide {
      *
      */
     resize() {
-        if (this.type === "svg"){
+        if (this.type === "svg") {
             this.h = window.innerHeight - window.headerHeight - window.playerHeight;
             switch (this.vAlign) {
                 case "center":
@@ -80,13 +79,18 @@ class Slide {
     /**
      *
      */
-    play(){
-        if (this.audio){
+    play() {
+        if (this.audio) {
             this.parent.audio.set(this.audio).show().play();
+            if (this.type === "svg") {
+                this.parent.audio.showProgress();
+            } else {
+                this.parent.audio.hideProgress();
+            }
         } else {
             this.parent.audio.hide();
         }
-        if (this.type === "svg" && this.animate){
+        if (this.type === "svg" && this.animate) {
             this.animate.play();
         }
     }
@@ -94,8 +98,8 @@ class Slide {
     /**
      *
      */
-    stop(){
-        if (this.type === "svg" && this.animate){
+    stop() {
+        if (this.type === "svg" && this.animate) {
             this.animate.pause();
         }
     }

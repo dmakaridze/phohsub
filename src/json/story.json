@@ -1,4 +1,8 @@
 {
+  "title": {
+    "ka": "ნარკოტიკები: მომხმარებლებისა და მეცნიერების ენაზე | CACTUS-MEDIA",
+    "en": ""
+  },
   "slides": [
     {
       "id": "",
@@ -84,6 +88,15 @@
     {
       "id": "",
       "src": "html/info.html",
+      "audio": "audio/ambient.mp3",
+      "caption": "",
+      "type": "html",
+      "vAlign": "",
+      "hAlign": ""
+    },
+    {
+      "id": "",
+      "src": "html/credits.html",
       "audio": "audio/ambient.mp3",
       "caption": "",
       "type": "html",

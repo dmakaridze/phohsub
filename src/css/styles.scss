@@ -1,4 +1,6 @@
 $brand-green: #016838;
+$dark-green: #00341c;
+$light-green: #01B35E;
 
 .swiper-container {
   width: 100vw;
@@ -13,11 +15,15 @@ $brand-green: #016838;
     position: absolute;
   }
 }
-
+.info-link,
 .view-story-btn,
 .language-switcher {
   font-family: "BPG Glaho WEB Caps", sans-serif;
   font-weight: bold;
+}
+
+.info-link {
+  margin: 16px 2rem;
 }
 
 :root {
@@ -88,6 +94,7 @@ header,
 .container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .full-page {
@@ -102,7 +109,7 @@ header,
   list-style: disc;
 
   li {
-    margin: 2rem 0;
+    margin: 1rem 0;
   }
 }
 
@@ -134,7 +141,7 @@ header,
 
     &:after, &:before {
       height: 2px;
-      background-color: #aaa;
+      background-color: #444;
       content: "";
       width: 100%;
       display: block;
@@ -152,7 +159,7 @@ header,
 
     &:hover {
       &:after, &:before {
-        background-color: #fff;
+        background-color: #000;
       }
     }
   }
@@ -183,24 +190,14 @@ header,
 a {
   text-decoration: none;
   cursor: pointer;
+  color: $brand-green;
+  &:hover {
+    color: $light-green;
+  }
 }
 
-.bg-dark-gray {
-  background-color: #333;
-
-  h3 {
-    color: #ccc;
-  }
-
-  color: #aaa;
-
-  a {
-    color: #ccc;
-
-    &:hover {
-      color: white;
-    }
-  }
+ol.translates {
+  padding-left: 2rem;
 }
 
 .info-bg,
@@ -210,16 +207,21 @@ a {
   }
 
   color: #444;
-
-  a {
-    color: #222;
-
+}
+.info-modal-wrapper {
+  a:after {
+    content: "";
+    width: 1em;
+    display: inline-block;
+    height: 1em;
+    background: url(../svg/extlink.svg) no-repeat bottom;
+    margin: 0 .5rem;
+    background-size: contain;
     &:hover {
-      color: $brand-green;
+      background-image: url(../svg/extlinklight.svg);
     }
   }
 }
-
 .info-bg,
 .intro-bg {
   background-size: cover;
@@ -354,4 +356,56 @@ h4 {
   padding: 5px 10px 7px;
   border: 1px solid black;
   font-family: Monospace;
+}
+
+.row {
+  display: flex;
+  .col-md-6,
+  .col-sm-12 {
+    display: flex;
+    flex-direction: column;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-sm-12 {
+    width: 100%;
+  }
+}
+
+#credits-page {
+  p {
+    font-family: "BPG Glaho WEB Caps", sans-serif;
+    text-align: center;
+    width: 50%;
+    margin: .2rem auto;
+    &.title {
+      margin: 1rem auto .5rem;
+      font-size: .8rem;
+    }
+    &.name {
+      font-weight: bold;
+    }
+  }
+  hr.divider {
+    width: 30%;
+    margin: 1rem auto;
+    border: 1px solid #333;
+    border-top-width: 0;
+  }
+}
+
+.audio-player.hide-progress {
+  .plyr__time,
+  .plyr__progress {
+    display: none;
+  }
+}
+
+#language-switcher {
+  display: none;
+}
+
+.opinion {
+  font-size: .8rem;
 }

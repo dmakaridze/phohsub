@@ -25,6 +25,8 @@ class Story {
         this.el = document.createElement("div");
         this.el.id = id;
 
+        document.title = this.title = StoryData.title[lang];
+
         let swContainer = document.createElement("div");
         swContainer.classList.add("swiper-container");
         this.el.append(swContainer);
@@ -46,7 +48,7 @@ class Story {
             }
         });
         for (let i = 0; i < StoryData.slides.length; i++) {
-            let slide = new Slide(StoryData.slides[i], this);
+            let slide = new Slide(StoryData.slides[i], this, i);
             swWrapper.append(slide.el);
             this.slides[i] = slide;
         }
@@ -66,13 +68,17 @@ class Story {
      */
     init() {
         let story = this;
+        console.log(window.location);
         this.sw = new Swiper(".swiper-container", {
             effect: "fade",
             mousewheel: true,
             direction: "vertical",
+            hashNavigation: {
+                replaceState: false,
+                watchState: true,
+            },
             pagination: {
                 el: ".swiper-pagination",
-                //type: "custom",
                 clickable: true,
                 renderBullet: function (index, className) {
                     return '<span class="' + className + '">' + (index + 1) + '</span>';
