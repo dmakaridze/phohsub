@@ -71,7 +71,9 @@ class Story {
         console.log(window.location);
         this.sw = new Swiper(".swiper-container", {
             effect: "fade",
-            mousewheel: true,
+            mousewheel: {
+                releaseOnEdges: true,
+            },
             direction: "vertical",
             hashNavigation: {
                 replaceState: false,

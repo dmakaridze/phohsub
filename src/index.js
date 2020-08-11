@@ -29,13 +29,37 @@ document.onreadystatechange = () => {
         });
         langSwitcher.setActive("ka");
         langSwitcher.append(story);
-        let infoLink = document.createElement("a");
-        infoLink.href = "#10";
-        infoLink.classList.add("info-link");
-        infoLink.innerText = "ინფორმაცია ნარკოტიკებზე";
+
+        let menu = document.createElement("ul");
+        menu.classList.add("main-menu");
+
+        let el = document.createElement("a");
+        el.href = "#1";
+        el.classList.add("home-link");
+        el.innerText = "მთავარი";
+
+        let item = document.createElement("li");
+        item.appendChild(el);
+        menu.appendChild(item);
+
+        el = document.createElement("a");
+        el.href = "#10";
+        el.classList.add("info-link");
+        el.innerText = "ინფორმაცია ნარკოტიკებზე";
+        item = document.createElement("li");
+        item.appendChild(el);
+        menu.appendChild(item);
+
+        el = document.createElement("a");
+        el.href = "#11";
+        el.classList.add("credits-link");
+        el.innerText = "პროექტი";
+        item = document.createElement("li");
+        item.appendChild(el);
+        menu.appendChild(item);
 
         let header = new Header("svg/cactus-green.svg", {
-            infoLink: infoLink,
+            menu: menu,
             langSwitcher: langSwitcher.el
         });
         header.el.style.height = window.headerHeight + "px";

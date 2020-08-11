@@ -15,15 +15,24 @@ $light-green: #01B35E;
     position: absolute;
   }
 }
-.info-link,
+.main-menu,
 .view-story-btn,
 .language-switcher {
   font-family: "BPG Glaho WEB Caps", sans-serif;
   font-weight: bold;
 }
-
-.info-link {
-  margin: 16px 2rem;
+.main-menu {
+  list-style: none;
+  display: flex;
+  li {
+    margin: 12px 1rem 16px 0;
+    border-right: 1px solid rgba(1, 104, 56, 0.31);
+    padding-right: 1rem;
+    padding-top: 4px;
+    &:last-child {
+      border: none;
+    }
+  }
 }
 
 :root {
@@ -360,16 +369,28 @@ h4 {
 
 .row {
   display: flex;
+  overflow-y: auto;
   .col-md-6,
+  .col-md-8,
   .col-sm-12 {
     display: flex;
     flex-direction: column;
   }
-  .col-md-6 {
-    width: 50%;
+  @media (min-width: 576px) {
+    .col-sm-12 {
+      width: 100%;
+    }
   }
-  .col-sm-12 {
-    width: 100%;
+  @media (min-width: 768px) {
+    .col-md-6 {
+      width: 50%;
+    }
+    .col-md-8 {
+      width: 66%;
+    }
+    .offset-md-2 {
+      margin-left: 17%;
+    }
   }
 }
 
@@ -408,4 +429,16 @@ h4 {
 
 .opinion {
   font-size: .8rem;
+}
+
+.foreword {
+  p {
+    font-family: "MG Glaho Drunk", sans-serif;
+    margin-bottom: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+.allow-overflow {
+  overflow-y: auto;
 }

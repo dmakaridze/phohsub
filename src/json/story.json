@@ -15,6 +15,15 @@
     },
     {
       "id": "",
+      "src": "html/foreword.html",
+      "audio": "audio/ambient.mp3",
+      "caption": "",
+      "type": "html",
+      "vAlign": "",
+      "hAlign": ""
+    },
+    {
+      "id": "",
       "src": "svg/7.svg",
       "audio": "audio/giorgik_mix.mp3",
       "caption": "",
